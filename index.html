@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket to Run Arendal - Maraton fra Nelaug til Arendal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #2a5d6f 0%, #4a8fa0 50%, #e8d9a8 100%);
+            color: #2a3e3f;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e4d5e 0%, #2a5d6f 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 8px solid #d9a95b;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #f4e7c3;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            font-family: 'Impact', sans-serif;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: #f4e7c3;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .ticket-icon {
+            display: inline-block;
+            width: 100px;
+            height: 70px;
+            background: #d9a95b;
+            border: 4px solid #2a5d6f;
+            border-radius: 8px;
+            position: relative;
+            margin: 1.5rem auto;
+            transform: rotate(-5deg);
+        }
+
+        .ticket-icon::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 6px;
+            background: #2a5d6f;
+            top: 20%;
+            left: 20%;
+        }
+
+        .ticket-icon::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 6px;
+            background: #2a5d6f;
+            top: 50%;
+            left: 20%;
+        }
+
+        nav {
+            background: #2a5d6f;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #f4e7c3;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            display: inline-block;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            background: #d9a95b;
+            color: #2a5d6f;
+            border-color: #d9a95b;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(42, 93, 111, 0.9), rgba(74, 143, 160, 0.9));
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            border: 5px solid #d9a95b;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: #f4e7c3;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .route-box {
+            background: #f4e7c3;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 4px solid #d9a95b;
+        }
+
+        .route-box h3 {
+            color: #2a5d6f;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .route-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            color: #2a5d6f;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .step p {
+            color: #4a6365;
+            font-size: 1rem;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: #d9a95b;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .info-card {
+            background: rgba(244, 231, 195, 0.95);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 4px solid #2a5d6f;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: #2a5d6f;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            border-bottom: 3px solid #d9a95b;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li {
+            padding: 0.5rem 0;
+            color: #3a4e4f;
+            font-size: 1.05rem;
+        }
+
+        .info-card li::before {
+            content: "🏃 ";
+            margin-right: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #c67b3e;
+            color: #f4e7c3;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 2rem auto;
+            display: block;
+            width: fit-content;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 4px solid #2a5d6f;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #ffe0af;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: #1e4d5e;
+            color: #f4e7c3;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 8px solid #d9a95b;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .lighthouse-icon {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .route-steps {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="ticket-icon"></div>
+        <h1>Ticket to Run Arendal</h1>
+        <p class="tagline">Med toget til Nelaug - løp tilbake til Arendal</p>
+    </header>
+
+    <nav>
+        <a href="#om">Om løpet</a>
+        <a href="#rute">Rute</a>
+        <a href="#info">Praktisk info</a>
+        <a href="#pamelding">Påmelding</a>
+    </nav>
+
+    <div class="container">
+        <section class="hero-section" id="om">
+            <div class="hero-content">
+                <h2>Et maratonløp utenom det vanlige</h2>
+                <p>Opplev Sørlandet på en helt unik måte! Ta toget fra Arendal til Nelaug og løp de 42,195 kilometerne tilbake gjennom vakker natur, langs historiske jernbanespor og gjennom sørlandsk kystlandskap.</p>
+                <p>Dette er mer enn et maraton - det er en reise gjennom tid, natur og historie.</p>
+            </div>
+        </section>
+
+        <section class="route-box" id="rute">
+            <h3>🚂 Slik fungerer det 🏃</h3>
+            <div class="route-steps">
+                <div class="step">
+                    <div class="step-icon">🎫</div>
+                    <h4>Steg 1</h4>
+                    <p>Møt opp i Arendal og få din startnummer og togbillett</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">🚂</div>
+                    <h4>Steg 2</h4>
+                    <p>Ta toget fra Arendal til Nelaug og nyt utsikten</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">🏃</div>
+                    <h4>Steg 3</h4>
+                    <p>Løp maraton (42,195 km) fra Nelaug tilbake til Arendal</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">🏆</div>
+                    <h4>Mål!</h4>
+                    <p>Kryss målstreken i Arendal og feir med oss!</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="info-grid" id="info">
+            <div class="info-card">
+                <h3>Løypeinfo</h3>
+                <ul>
+                    <li>Distanse: 42,195 km (maraton)</li>
+                    <li>Start: Nelaug stasjon</li>
+                    <li>Mål: Arendal sentrum</li>
+                    <li>Variert terreng med asfalt og grus</li>
+                    <li>Drikkestasjoner hvert 5. km</li>
+                    <li>Fantastisk natur og kystlandskap</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Praktisk</h3>
+                <ul>
+                    <li>Oppmøte: 07:00 i Arendal</li>
+                    <li>Togavgang: 08:00</li>
+                    <li>Start i Nelaug: 09:30</li>
+                    <li>Tidsbegrensning: 6 timer</li>
+                    <li>Garderobe og dusj ved mål</li>
+                    <li>Premie til alle som fullfører</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Inkludert</h3>
+                <ul>
+                    <li>Togbillett Arendal-Nelaug</li>
+                    <li>Startnummer og tidtaking</li>
+                    <li>Drikke og mat underveis</li>
+                    <li>Medalje og diplom</li>
+                    <li>Vintage løpstrøye</li>
+                    <li>Etterfest med mat og drikke</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="#pamelding" class="cta-button">Meld deg på nå!</a>
+
+        <section class="hero-section" id="pamelding">
+            <div class="hero-content">
+                <h2>Klar for eventyret?</h2>
+                <p>Påmeldingen åpner snart. Registrer din interesse så sender vi deg beskjed når påmeldingen går live!</p>
+                <p style="margin-top: 2rem; font-size: 1.1rem;">📧 Kontakt: post@tickettorunarendal.no</p>
+                <p>📱 Følg oss på sosiale medier for oppdateringer</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="lighthouse-icon">⛯</div>
+        <p><strong>Ticket to Run Arendal</strong></p>
+        <p>En reise, et løp, et eventyr</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2025 Ticket to Run Arendal | Arrangert med kjærlighet til Sørlandet</p>
+    </footer>
+</body>
+</html>
