@@ -408,19 +408,19 @@
         .mountain1 {
             border-bottom: 180px solid #34495e;
             left: 10%;
-            animation: float 6s ease-in-out infinite;
+           
         }
         
         .mountain2 {
             border-bottom: 150px solid #2c3e50;
             left: 35%;
-            animation: float 7s ease-in-out infinite 1s;
+            
         }
         
         .mountain3 {
             border-bottom: 200px solid #3d5a80;
             left: 60%;
-            animation: float 8s ease-in-out infinite 2s;
+           
         }
         
         @keyframes float {
@@ -1078,6 +1078,45 @@
             footer {
                 padding: 1.5rem; /* Reduce padding */
             }
+
+            .train {
+                transform: scale(0.5); /* Reduce the size of the train */
+                bottom: 5px; /* Adjust position */
+            }
+
+            .train-track {
+                
+                bottom: 10px; /* Adjust position */
+            }
+
+            .runner {
+                transform: scale(0.5); /* Reduce the size of the runner */
+                bottom: 0px; /* Adjust position */
+            }
+
+            .mountain {
+                border-left-width: 80px; /* Reduce the width of the mountains */
+                border-right-width: 80px;
+                border-bottom-width: 100px; /* Reduce the height of the mountains */
+            }
+
+            .forest {
+                border-left-width: 20px; /* Reduce the width of the trees */
+                border-right-width: 20px;
+                border-bottom-width: 60px; /* Reduce the height of the trees */
+            }
+
+            .station {
+            position: absolute;
+            bottom: 17px;
+           
+            padding: 5px 10px;
+            
+           
+            
+            font-size: 0.7rem;
+           
+        }
         }
     </style>
 </head>
