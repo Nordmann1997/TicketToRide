@@ -13,16 +13,17 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(to bottom, #2a5d6f 0%, #4a8fa0 50%, #e8d9a8 100%);
+            background: linear-gradient(to bottom, #2a5d6f 0%, #4a8fa0 50%);
             color: #2a3e3f;
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #1e4d5e 0%, #2a5d6f 100%);
             padding: 3rem 2rem;
             text-align: center;
-            border-bottom: 8px solid #d9a95b;
+            
+            position: relative;
+            z-index: 30;
         }
 
         h1 {
@@ -75,9 +76,10 @@
         }
 
         nav {
-            background: #2a5d6f;
             padding: 1rem;
             text-align: center;
+            position: relative;
+            z-index: 30;
         }
 
         nav a {
@@ -108,15 +110,20 @@
 
         .hero-section {
             background: linear-gradient(135deg, rgba(42, 93, 111, 0.9), rgba(74, 143, 160, 0.9));
-            padding: 4rem 2rem;
+            padding: 2rem 2rem;
             border-radius: 15px;
             margin-bottom: 3rem;
-            border: 5px solid #d9a95b;
+            border: 5px solid #f5b83f;
+            display: flex; /* Use flexbox for better alignment */
+            align-items: center; /* Center content vertically */
+            gap: 2rem; /* Add spacing between text and image */
         }
 
         .hero-content {
             text-align: center;
             color: #f4e7c3;
+            flex: 1; /* Allow text to take up available space */
+            text-align: left; /* Align text to the left */
         }
 
         .hero-content h2 {
@@ -128,7 +135,7 @@
 
         .hero-content p {
             font-size: 1.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2.5rem;
             line-height: 1.8;
         }
 
@@ -231,8 +238,8 @@
 
         .cta-button {
             display: inline-block;
-            background: #c67b3e;
-            color: #f4e7c3;
+            background: #ffa65d;
+            color: #ff9e28;
             padding: 1.2rem 3rem;
             font-size: 1.3rem;
             text-decoration: none;
@@ -270,6 +277,716 @@
             margin: 1rem 0;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            
+            overflow-x: hidden;
+            
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #d63031 0%, #e17055 100%);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        .hero {
+            background: linear-gradient(180deg, #74b9ff 0%, #6bb3fa 100%);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            margin-top: 0;
+            padding-top: calc(72px + 2rem);
+            z-index: 10;
+        }
+        
+        .landscape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .forest {
+            position: absolute;
+            bottom: 40px;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 80px solid #27ae60;
+        }
+        
+        .forest1 { left: 5%; animation: sway 4s ease-in-out infinite; }
+        .forest2 { left: 12%; animation: sway 5s ease-in-out infinite 0.5s; }
+        .forest3 { left: 25%; animation: sway 4.5s ease-in-out infinite 1s; }
+        .forest4 { left: 40%; animation: sway 5.5s ease-in-out infinite 1.5s; }
+        .forest5 { left: 55%; animation: sway 4s ease-in-out infinite 2s; }
+        .forest6 { left: 68%; animation: sway 6s ease-in-out infinite 2.5s; }
+        .forest7 { left: 78%; animation: sway 4.8s ease-in-out infinite 3s; }
+        .forest8 { left: 88%; animation: sway 5.2s ease-in-out infinite 3.5s; }
+        
+        @keyframes sway {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(3deg); }
+        }
+        
+        .mountains {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 250px;
+        }
+        
+        .mountain {
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+        }
+        
+        .mountain1 {
+            border-bottom: 180px solid #34495e;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .mountain2 {
+            border-bottom: 150px solid #2c3e50;
+            left: 35%;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+        
+        .mountain3 {
+            border-bottom: 200px solid #3d5a80;
+            left: 60%;
+            animation: float 8s ease-in-out infinite 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .train-track {
+            position: absolute;
+            bottom: 35px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                #2d3436 0px,
+                #2d3436 40px,
+                transparent 40px,
+                transparent 50px
+            );
+        }
+        
+        .station {
+            position: absolute;
+            bottom: 40px;
+            background: #e74c3c;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .station-nelaug {
+            right: 5%;
+        }
+        
+        .station-arendal {
+            left: 5%;
+        }
+        
+        .train {
+            position: absolute;
+            bottom: 40px;
+            left: 5%;
+            animation: trainToNelaug 15s ease-in-out infinite;
+            z-index: 10;
+        }
+        
+        @keyframes trainToNelaug {
+            0%, 10% { left: 5%; }
+            45%, 55% { left: calc(95% - 180px); }
+            90%, 100% { left: 5%; }
+        }
+        
+        .train-body {
+            width: 180px;
+            height: 60px;
+            background: linear-gradient(135deg, #d63031 0%, #e17055 100%);
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .train-window {
+            width: 30px;
+            height: 25px;
+            background: #74b9ff;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            border: 3px solid #2d3436;
+        }
+        
+        .window1 { left: 15px; }
+        .window2 { left: 55px; }
+        .window3 { left: 95px; }
+        .window4 { left: 135px; }
+        
+        .train-wheel {
+            width: 20px;
+            height: 20px;
+            background: #2d3436;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -10px;
+            animation: spin 0.5s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .wheel1 { left: 20px; }
+        .wheel2 { left: 60px; }
+        .wheel3 { left: 100px; }
+        .wheel4 { left: 140px; }
+        
+        .runner {
+            position: absolute;
+            bottom: 40px;
+            right: 5%;
+            font-size: 3rem;
+            animation: runToArendal 20s ease-in-out infinite;
+            z-index: 11;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        @keyframes runToArendal {
+            0%, 15% { 
+                right: 5%;
+                transform: scaleX(1);
+            }
+            50%, 65% { 
+                right: calc(95% - 50px);
+                transform: scaleX(1);
+            }
+            85%, 100% { 
+                right: 5%;
+                transform: scaleX(1);
+            }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+        }
+        
+        .hero-text {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #fdcb6e 0%, #ffad15 100%);
+            color: #2d3436;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        
+        .registration-form {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 3px solid #d63031;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .registration-form.active {
+            display: block;
+            animation: formAppear 0.4s ease-out;
+        }
+        
+        @keyframes formAppear {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #d63031;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .close-form {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #d63031;
+            color: #fff;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        
+        .close-form:hover {
+            transform: rotate(90deg);
+        }
+        
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+            display: none;
+        }
+        
+        .form-overlay.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #dfe6e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #d63031;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #d63031;
+        }
+        
+        .radio-option label {
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .distance-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 10px;
+            border: 2px dashed #d63031;
+        }
+        
+        .distance-info p {
+            margin: 0.5rem 0;
+            color: #2d3436;
+            font-size: 0.95rem;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            color: #2d3436;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        
+        .ticket-printer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #2d3436;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .ticket-printer.active {
+            display: block;
+            animation: printerAppear 0.4s ease-out;
+        }
+        
+        @keyframes printerAppear {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        
+        .printer-slot {
+            width: 350px;
+            height: 80px;
+            background: #000;
+            border-radius: 10px;
+            overflow: visible;
+            position: relative;
+            border: 4px solid #636e72;
+        }
+        
+        .printer-light {
+            position: absolute;
+            top: -30px;
+            right: 10px;
+            width: 12px;
+            height: 12px;
+            background: #00b894;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00b894;
+            animation: blink 1s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        .ticket {
+            width: 320px;
+            background: linear-gradient(135deg, #fff 0%, #ffeaa7 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 3px dashed #d63031;
+            clip-path: inset(0 0 100% 0);
+        }
+        
+        .ticket.printing {
+            animation: printTicket 3s ease-out forwards;
+        }
+        
+        @keyframes printTicket {
+            0% { 
+                clip-path: inset(0 0 100% 0);
+                top: 0;
+            }
+            100% { 
+                clip-path: inset(0 0 0 0);
+                top: -280px;
+            }
+        }
+        
+        .ticket-header {
+            text-align: center;
+            border-bottom: 2px dashed #d63031;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ticket-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #d63031;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ticket-subtitle {
+            font-size: 0.8rem;
+            color: #636e72;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .ticket-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ticket-field {
+            font-size: 0.85rem;
+        }
+        
+        .ticket-label {
+            color: #636e72;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+        
+        .ticket-value {
+            color: #2d3436;
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+        
+        .ticket-barcode {
+            height: 50px;
+            background: linear-gradient(90deg, 
+                #000 0%, #000 5%, transparent 5%, transparent 8%,
+                #000 8%, #000 10%, transparent 10%, transparent 15%,
+                #000 15%, #000 18%, transparent 18%, transparent 20%,
+                #000 20%, #000 22%, transparent 22%, transparent 28%,
+                #000 28%, #000 32%, transparent 32%, transparent 35%,
+                #000 35%, #000 38%, transparent 38%, transparent 42%,
+                #000 42%, #000 45%, transparent 45%, transparent 48%,
+                #000 48%, #000 55%, transparent 55%, transparent 58%,
+                #000 58%, #000 62%, transparent 62%, transparent 70%,
+                #000 70%, #000 75%, transparent 75%, transparent 80%,
+                #000 80%, #000 85%, transparent 85%, transparent 90%,
+                #000 90%, #000 95%, transparent 95%, transparent 100%
+            );
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        
+        .ticket-number {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: #636e72;
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+        
+        .printer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+            display: none;
+        }
+        
+        .printer-overlay.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .close-printer {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: #fff;
+            color: #2d3436;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        
+        .close-printer:hover {
+            transform: rotate(90deg);
+        }
+        
+        .ticket-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #d63031;
+            color: #fff;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+            z-index: 10;
+        }
+        
+        .ticket-close:hover {
+            transform: rotate(90deg) scale(1.1);
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -292,29 +1009,243 @@
                 margin: 0.5rem 0;
             }
         }
+        /* --- hero background reaches up under header and nav --- */
+        header, nav {
+          position: relative;
+          z-index: 30;
+        }
+        .hero {
+          /* pull the hero background up so it visually extends under header+nav */
+          margin-top: -72px; /* pulls the hero up behind header+nav (adjust if header/nav heights change) */
+          padding-top: calc(72px + 2rem); /* preserve space so hero content isn't hidden behind header/nav */
+          position: relative;
+          z-index: 10;
+        }
+        .hero-section img {
+            flex: 0 0 auto; /* Prevent the image from shrinking */
+            max-width: 50%; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 400px; /* Increase the maximum height */
+            border-radius: 10px; /* Optional: Add rounded corners */
+        }
+
+        @media (max-width: 900px) {
+            body {
+                font-size: 90%; /* Scale down the base font size */
+            }
+
+            header {
+                padding: 2rem 1rem; /* Reduce padding */
+            }
+
+            h1 {
+                font-size: 2.5rem; /* Scale down the header text */
+            }
+
+            nav a {
+                padding: 0.5rem 1rem; /* Reduce padding for navigation links */
+                font-size: 0.8rem; /* Scale down font size */
+            }
+
+            .hero-section {
+                flex-direction: column; /* Stack content vertically */
+                padding: 1.5rem; /* Reduce padding */
+            }
+
+            .hero-content {
+                text-align: center; /* Center-align text */
+            }
+
+            .hero-section img {
+                max-width: 100%; /* Make the image take full width */
+                margin-top: 1.5rem; /* Add spacing above the image */
+            }
+
+            .route-steps {
+                flex-direction: column; /* Stack steps vertically */
+                gap: 1.5rem; /* Adjust spacing between steps */
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr; /* Make info cards stack vertically */
+            }
+
+            .cta-button {
+                padding: 1rem 2rem; /* Reduce padding */
+                font-size: 1rem; /* Scale down font size */
+            }
+
+            footer {
+                padding: 1.5rem; /* Reduce padding */
+            }
+        }
     </style>
 </head>
 <body>
+    <section class="hero">
     <header>
         <div class="ticket-icon"></div>
         <h1>Ticket to Run Arendal</h1>
         <p class="tagline">Med toget til Nelaug - løp tilbake til Arendal</p>
     </header>
 
-    <nav>
-        <a href="#om">Om løpet</a>
-        <a href="#rute">Rute</a>
-        <a href="#info">Praktisk info</a>
-        <a href="#pamelding">Påmelding</a>
-    </nav>
+    
+
+    
+        <div class="landscape">
+            <div class="forest forest1"></div>
+            <div class="forest forest2"></div>
+            <div class="forest forest3"></div>
+            <div class="forest forest4"></div>
+            <div class="forest forest5"></div>
+            <div class="forest forest6"></div>
+            <div class="forest forest7"></div>
+            <div class="forest forest8"></div>
+            
+            <div class="mountains">
+                <div class="mountain mountain1"></div>
+                <div class="mountain mountain2"></div>
+                <div class="mountain mountain3"></div>
+            </div>
+            
+            <div class="train-track"></div>
+            <div class="station station-arendal">ARENDAL</div>
+            <div class="station station-nelaug">NELAUG</div>
+            
+            <div class="train">
+                <div class="train-body">
+                    <div class="train-window window1"></div>
+                    <div class="train-window window2"></div>
+                    <div class="train-window window3"></div>
+                    <div class="train-window window4"></div>
+                    <div class="train-wheel wheel1"></div>
+                    <div class="train-wheel wheel2"></div>
+                    <div class="train-wheel wheel3"></div>
+                    <div class="train-wheel wheel4"></div>
+                </div>
+            </div>
+            
+            <div class="runner">🏃</div>
+        </div>
+        
+        <div class="hero-content">
+           
+            <p class="hero-text">
+                La deg forføre av spektakulære fjelllandskap, dype daler og krystallklare fjorder. 
+                Din reise begynner her – hvor eventyret møter komfort.
+            </p>
+            <button class="cta-button" onclick="showRegistrationForm()">Bestill Billett</button>
+        </div>
+    </section>
+    
+    <div class="form-overlay" id="formOverlay"></div>
+    <div class="registration-form" id="registrationForm">
+        <button class="close-form" onclick="closeRegistrationForm()">×</button>
+        <h2 class="form-title">Påmelding</h2>
+        <form onsubmit="submitRegistration(event)">
+            <div class="form-group">
+                <label class="form-label" for="name">Navn</label>
+                <input type="text" id="name" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="age">Alder</label>
+                <input type="number" id="age" class="form-input" min="16" max="99" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Kjønn</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="male" name="gender" value="Mann" required>
+                        <label for="male">Mann</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="female" name="gender" value="Kvinne" required>
+                        <label for="female">Kvinne</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="other" name="gender" value="Annet" required>
+                        <label for="other">Annet</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Distanse</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="full" name="distance" value="Helmaraton" required>
+                        <label for="full">Helmaraton</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="half" name="distance" value="Halvmaraton" required>
+                        <label for="half">Halvmaraton</label>
+                    </div>
+                </div>
+                
+                <div class="distance-info">
+                    <p><strong>🏃‍♀️ Helmaraton:</strong> Arendal → Nelaug</p>
+                    <p><strong>🏃‍♂️ Halvmaraton:</strong> Arendal → Bøylefoss</p>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-button">Meld Meg På</button>
+        </form>
+    </div>
+    
+    <div class="printer-overlay" id="printerOverlay"></div>
+    <div class="ticket-printer" id="ticketPrinter">
+        <button class="close-printer" onclick="closePrinter()">×</button>
+        <div class="printer-light"></div>
+        <div class="printer-slot">
+            <div class="ticket" id="ticket">
+                <div class="ticket-header">
+                    <h3 class="ticket-title">TICKET TO RUN</h3>
+                    <p class="ticket-subtitle">Maraton Startnummer</p>
+                </div>
+                <div class="ticket-info">
+                    <div class="ticket-field">
+                        <div class="ticket-label">Navn</div>
+                        <div class="ticket-value" id="ticketName">-</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Alder</div>
+                        <div class="ticket-value" id="ticketAge">-</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Kjønn</div>
+                        <div class="ticket-value" id="ticketGender">-</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Distanse</div>
+                        <div class="ticket-value" id="ticketDistance">-</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Fra</div>
+                        <div class="ticket-value" id="ticketFrom">Arendal</div>
+                    </div>
+                    <div class="ticket-field">
+                        <div class="ticket-label">Til</div>
+                        <div class="ticket-value" id="ticketTo">-</div>
+                    </div>
+                </div>
+                <div class="ticket-barcode"></div>
+                <div class="ticket-number">NO-TTR-2025-RUN</div>
+                <button class="ticket-close" onclick="closeTicket()">×</button>
+            </div>
+        </div>
+    </div>
+    
 
     <div class="container">
         <section class="hero-section" id="om">
             <div class="hero-content">
                 <h2>Et maratonløp utenom det vanlige</h2>
                 <p>Opplev Sørlandet på en helt unik måte! Ta toget fra Arendal til Nelaug og løp de 42,195 kilometerne tilbake gjennom vakker natur, langs historiske jernbanespor og gjennom sørlandsk kystlandskap.</p>
-                <p>Dette er mer enn et maraton - det er en reise gjennom tid, natur og historie.</p>
+                <h3>Dette er mer enn et maraton - det er en reise gjennom tid, natur og historie.</h3>
             </div>
+            <img src="poster.png" alt="Poster for Ticket to Run">
         </section>
 
         <section class="route-box" id="rute">
@@ -384,7 +1315,7 @@
             </div>
         </div>
 
-        <a href="#pamelding" class="cta-button">Meld deg på nå!</a>
+       
 
         <section class="hero-section" id="pamelding">
             <div class="hero-content">
@@ -402,5 +1333,74 @@
         <p>En reise, et løp, et eventyr</p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">© 2025 Ticket to Run Arendal | Arrangert med kjærlighet til Sørlandet</p>
     </footer>
+
+    <script>
+        function showRegistrationForm() {
+            const overlay = document.getElementById('formOverlay');
+            const form = document.getElementById('registrationForm');
+            
+            overlay.classList.add('active');
+            form.classList.add('active');
+        }
+        
+        function closeRegistrationForm() {
+            const overlay = document.getElementById('formOverlay');
+            const form = document.getElementById('registrationForm');
+            
+            overlay.classList.remove('active');
+            form.classList.remove('active');
+        }
+        
+        document.getElementById('formOverlay').addEventListener('click', closeRegistrationForm);
+        
+        function submitRegistration(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const distance = document.querySelector('input[name="distance"]:checked').value;
+            
+            const destination = distance === 'Halvmaraton' ? 'Bøylefoss' : 'Nelaug';
+            
+            document.getElementById('ticketName').textContent = name;
+            document.getElementById('ticketAge').textContent = age;
+            document.getElementById('ticketGender').textContent = gender;
+            document.getElementById('ticketDistance').textContent = distance;
+            document.getElementById('ticketTo').textContent = destination;
+            
+            closeRegistrationForm();
+            printTicket();
+        }
+        
+        function printTicket() {
+            const overlay = document.getElementById('printerOverlay');
+            const printer = document.getElementById('ticketPrinter');
+            const ticket = document.getElementById('ticket');
+            
+            overlay.classList.add('active');
+            printer.classList.add('active');
+            
+            setTimeout(() => {
+                ticket.classList.add('printing');
+            }, 500);
+        }
+        
+        function closeTicket() {
+            closePrinter();
+        }
+        
+        function closePrinter() {
+            const overlay = document.getElementById('printerOverlay');
+            const printer = document.getElementById('ticketPrinter');
+            const ticket = document.getElementById('ticket');
+            
+            overlay.classList.remove('active');
+            printer.classList.remove('active');
+            ticket.classList.remove('printing');
+        }
+        
+        document.getElementById('printerOverlay').addEventListener('click', closePrinter);
+    </script>
 </body>
 </html>
